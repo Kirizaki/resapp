@@ -31,7 +31,7 @@ A modern, production-grade backend system for scraping and storing real estate l
 ## 📦 Project Structure
 
 ```
-real-estate-scraper/
+resapp/
 ├── app/                    # FastAPI backend
 │   ├── scrapers/           # scraping logic
 │   ├── models/             # SQLAlchemy models
