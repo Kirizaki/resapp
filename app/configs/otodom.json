@@ -1,0 +1,16 @@
+{
+    "source": "otodom",
+    "base_url": "https://www.otodom.pl",
+    "region": "pomorskie",
+    "city": "gdansk",
+    "min_area": 40,
+    "max_area": 90,
+    "max_price_per_m2": 12000,
+    "allowed_districts": ["wrzeszcz", "wrzeszcz górny", "wrzeszcz gorny", "wrzeszcz dolny"],
+    "omit_streets": ["Józefa Hallera", "Jozefa Hallera", "Hallera", "Tadeusza Kościuszki", "Kościuszki", "Kosciuszki", "Sochaczewska", "Żywiecka", "Zywiecka", "Legionów", "Legionow"],
+    "keywords": ["ogród", "ogrod", "ogrodek", "ogródek", "z ogrodem", "dostęp do ogrodu", "dostep do ogrodu", "balkon", "taras", "loggia", "galeria", "weranda", "przybudówka", "dziedziniec", "patio", "podest", "platforma"],
+    "omit_keywords": ["pierwotny"],
+    "max_floor": 0,
+    "must_have_garden": true
+  }
+  

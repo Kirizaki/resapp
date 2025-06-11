@@ -1,8 +1,29 @@
 import json
 from pathlib import Path
-from models.scraper_config import ScraperConfig
+from app.scrapers.otodom.scraper import OtodomScraper
+from app.scrapers.models.dto import ScraperConfig
+from app.utils.logger import Logger
 
-class ScraperConfigFactory:
+logger = Logger().get_logger()
+
+class ScraperFactory:
+    """Factory for creating scraper instances based on source name."""
+
+    _scrapers = {
+        "otodom": OtodomScraper,
+    }
+
+    @staticmethod
+    def create(site: str, config: dict):
+        site = site.lower()
+
+        if site not in ScraperFactory._scrapers:
+            logger.error("Unsupported scraper requested", extra={"site": site})
+            raise ValueError(f"Unsupported site: {site}")
+
+        logger.debug("Creating scraper instance", extra={"site": site, "config": config})
+        return ScraperFactory._scrapers[site](config=config)
+    
     @staticmethod
     def from_json(file_path: str) -> ScraperConfig:
         config_data = json.loads(Path(file_path).read_text())

@@ -1,9 +1,15 @@
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+# DATA TRANSFER OBJECTS
+
 @dataclass
 class ScraperConfig:
+    # scraper data
     source: str
+    base_url: str
+
+    # offer filters
     city: str
     region: Optional[str] = None
     min_price: Optional[int] = None
@@ -16,3 +22,8 @@ class ScraperConfig:
     allowed_districts: List[str] = field(default_factory=list)
     max_floor: Optional[int] = None
     must_have_garden: bool = False
+
+
+@dataclass
+class OfferRawData:
+    html: str

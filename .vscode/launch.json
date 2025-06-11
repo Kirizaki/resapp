@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "python": "/usr/local/bin/python3.10",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["--site", "otodom", "--config", "${cwd}/app/configs/otodom.json"],
+            "cwd": "/Users/greg/Documents/repos/resapp"
+        }
+    ]
+}
